@@ -169,22 +169,26 @@
   <p>2.AI, ML, and Data Science – Certified by the International Institute of Digital Technologies, in association with APSCHE and its industry partner Blackbucks Engineers</p>
   
 </section>
+  
+    <!-- Contact -->
+<section id="contact" class="contact">
+  <h2>📩 Contact Me</h2>
+  <p class="contact-intro">Have a project or opportunity? Let's connect!</p>
 
+  <form id="contactForm" class="contact-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>📩 Contact Me</h2>
-    <p class="contact-intro">Have a project or opportunity? Let's connect!</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p>Or chat directly:</p>
-    <div class="social-contact">
-      
-      <a href="https://wa.me/917036742470?text=Hello%20Yugandhar,%20let's%20connect!" class="whatsapp-btn">💬 WhatsApp</a>
+  <p>Or chat directly:</p>
+  <div class="social-contact">
+    <a href="https://wa.me/917036742470?text=Hello%20Yugandhar,%20let's%20connect!" class="whatsapp-btn">💬 WhatsApp</a>
+  </div>
+</section>
+
+   
       
     </div>
   </section>
@@ -200,6 +204,23 @@
       document.getElementById("navLinks").classList.toggle("active");
     }
   </script>
+  <script>
+  // Contact form email sender
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // stop page reload
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let subject = "Portfolio Contact Form - " + name;
+  let body = "Name: " + name + "%0D%0A"
+           + "Email: " + email + "%0D%0A"
+           + "Message: " + message;
+
+  window.location.href = "mailto:yugandhar4091@gmail.com?subject=" + subject + "&body=" + body;
+});
+</script>
   <script src="script.js"></script>
 </body>
 </html>
