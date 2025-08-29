@@ -1,169 +1,397 @@
+/* =======================
+   GENERAL STYLES
+======================= */
 body {
   font-family: 'Poppins', sans-serif;
-  transition: background 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: #f5f5f5;
+  color: #222;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons Hover Animation */
+.hover-btn {
+  transition: all 0.3s ease;
+}
+.hover-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  background: linear-gradient(90deg, #649eb7, #5099b1, #0cc8c2);
+}
+.navbar .nav-link {
+  color: #fff !important;
+  transition: all 0.3s;
+}
+.navbar .nav-link:hover {
+  color: #0ff;
+  transform: scale(1.1);
+}
+
+/* =======================
+   HERO SECTION
+======================= */
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #b5c6d7, #04312b);
+  padding-top: 60px;
+  background:url(../my-portfolio/background\ image\ for\ hero.jpg) no-repeat center center/cover;
+
 }
 
-.mode-toggle {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  z-index: 1000;
-  border-radius: 50%;
+.hero .hero-text {
+  flex: 1;
+  padding: 20px;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: white;
+.hero .hero-photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.dark-mode .navbar {
-  background-color: #222 !important;
-}
-
-.dark-mode .card {
-  background-color: #333;
-  color: white;
-}
-
-.progress-bar {
-  transition: width 1s;
-}
 .hero-photo img {
-  width: 340px;           /* Increased size */
-  height: 340px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
-  border-radius: 50%;     /* Round photo */
-  border: 8px solid #fff; /* White border */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 6px solid #95d5e4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  
 }
-
 .hero-photo img:hover {
-  transform: scale(1.1);  /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-photo img {
-    width: 240px;   /* Smaller on tablets/phones */
-    height: 240px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-photo img {
-    width: 180px;   /* Compact on small phones */
-    height: 180px;
-  }
-}
-/* Gradient Text for Name */
+/* Gradient Name */
 .highlight {
-  background: linear-gradient(90deg, #ba310e, #421f05); /* Orange-Pink gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
   font-size: 3rem;
-}
-
-/* Name Animation (optional subtle effect) */
-.highlight:hover {
-  background: linear-gradient(90deg, #6a11cb, #91a4c5); /* Purple-Blue gradient */
+  font-weight: 800;
+  background: linear-gradient(90deg, #da0827, #a72c5f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background 0.6s ease-in-out;
+  transition: all 0.6s;
 }
-.education {
-  padding: 60px 10%;
-  background: #f5f7fa;
-  color: #130f0f;
-  text-align: left;
+.highlight:hover {
+  background: linear-gradient(90deg, #000000, #4d90d4);
 }
 
-.education h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #2b5876;
-}
-
-.edu-item {
-  margin-bottom: 30px;
-}
-
-.edu-item h3 {
-  font-size: 1.4rem;
-  color: #4e4376;
-}
-
-.edu-item p {
-  font-size: 1rem;
-  color: #666;
-  margin: 5px 0 10px 0;
-}
-
-/* Progress Bar */
-.progress-bar {
-  width: 100%;
-  background: #ddd;
-  border-radius: 30px;
-  overflow: hidden;
-  height: 25px;
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-  line-height: 25px;
-  transition: width 1s ease-in-out;
-}
-/* Section Title */
+/* =======================
+   SECTION TITLES
+======================= */
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #222;
   position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
 }
-
 .section-title::after {
-  content: "";
+  content: '';
   width: 60px;
-  height: 3px;
-  background: #007bff;
+  height: 4px;
+  background: #4b1220;
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
 }
 
-/* Education Cards */
-.edu-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
+/* =======================
+   ABOUT SECTION
+======================= */
+.bg-about {
+  background: linear-gradient(135deg, #87b8cd, #04151c); /* dark gradient */
+  color: #fff;
+  padding: 80px 20px;
 }
 
-.edu-institute {
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.hover-about:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+
+/* =======================
+   EDUCATION SECTION
+======================= */
+.bg-education {
+  background: linear-gradient(135deg, #f0f2f0, #000c40);
+  color: #fff;
+  padding: 80px 20px;
+}
+.edu-card {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.hover-edu:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+}
+
+/* =======================
+   SKILLS SECTION
+======================= */
+.bg-skills {
+  background: linear-gradient(135deg, #88bab5, #077dac, #142a31);
+  color: #fff;
+  padding: 80px 20px;
+}
+.skill-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.hover-skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.2);
+}
+
+/* =======================
+   CERTIFICATION SECTION
+======================= */
+.bg-certification {
+  background: linear-gradient(135deg, #79aa79, #000c40);
+  color: #fff;
+  padding: 80px 20px;
+}
+.cert-card {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+.hover-cert:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* =======================
+   PROJECT SECTION
+======================= */
+/* ===== Projects Section ===== */
+.bg-projects {
+  background: linear-gradient(135deg, #28313B, #485563); /* Dark gradient */
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.project-card {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.project-card h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-card p {
   font-size: 1rem;
-  color: #666;
-  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
-.progress {
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
+.project-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
-.progress-bar {
+
+
+
+/* =======================
+   CONTACT SECTION
+======================= */
+.bg-contact {
+  background: linear-gradient(135deg, #4a7574, #077dac);
+  padding: 80px 20px;
+}
+.contact-card {
+  background: rgba(255,255,255,0.2);
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.hover-contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.contact-card h5 {
+  margin: 15px 0 10px;
+}
+
+/* =======================
+   CONTACT SECTION
+======================= */
+.bg-gradient-contact {
+  background: linear-gradient(135deg, #81a8b2, #162e36); /* Matches previous color */
+  color: #fff;
+  padding: 80px 20px;
+}
+
+#contact .section-title {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+}
+#contact .section-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #ffd700; /* Small underline highlight */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* FORM STYLING */
+#contactForm {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#contactForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+#contactForm input:focus,
+#contactForm textarea:focus {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 8px #ffd700;
+}
+
+#contactForm button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
   font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#contactForm button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #05cfa3, #8a6b99);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* CONTACT INFO STYLING */
+#contact .col-md-6 p {
+  
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+#contact .col-md-6 p i {
+  font-size: 1.5rem;
+  color: #ffd700;
+  transition: transform 0.3s, color 0.3s;
+}
+#contact .col-md-6 p a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+#contact .col-md-6 p a:hover {
+  color: #ffd700;
+}
+
+/* HOVER ANIMATIONS FOR ICONS */
+#contact .col-md-6 p:hover i {
+  transform: rotate(15deg) scale(1.2);
+  color: #8ba7b5;
+}
+#contact .col-md-6 p:hover {
+  transform: translateX(5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #contact .row {
+    flex-direction: column;
+  }
+  #contact .col-md-6 {
+    margin-bottom: 30px;
+  }
+}
+
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 20px;
   font-size: 0.9rem;
 }
 
+/* =======================
+   RESPONSIVE
+======================= */
+@media(max-width:768px){
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-photo img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media(max-width:480px){
+  .hero-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}
